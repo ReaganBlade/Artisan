@@ -5,8 +5,8 @@ import { Stamp } from "@/components/stamp";
 import { SignInForm } from "@/components/signin-form";
 
 export const metadata: Metadata = {
-  title: "Sign in — UNSIGNED",
-  description: "Sign back in to UNSIGNED and get to the wall.",
+  title: "Sign in — Artisan",
+  description: "Sign back in to Artisan and get to the wall.",
 };
 
 export default function SignInPage() {

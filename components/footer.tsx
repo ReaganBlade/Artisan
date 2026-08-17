@@ -70,7 +70,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <p className="font-display text-4xl uppercase leading-none tracking-tight">
-              UNSIGNED
+              Artisan
               <span className="align-super font-mono text-xs text-signal">®</span>
             </p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-paper/80">
@@ -113,7 +113,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col gap-3 border-t-2 border-paper/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[11px] uppercase tracking-widest text-paper/50">
-            © 2026 UNSIGNED. All rights reserved.
+            © 2026 Artisan. All rights reserved.
           </p>
           <p className="font-mono text-[11px] uppercase tracking-widest text-paper/50">
             Made by artists. Sold by artists. Hung by anyone.
