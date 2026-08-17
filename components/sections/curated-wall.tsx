@@ -105,7 +105,7 @@ export function CuratedWall() {
               className="h-8 w-28 -rotate-2 border-2 border-ink bg-riot sm:w-36"
             />
             <p className="ml-auto font-mono text-[10px] uppercase tracking-widest text-paper/50 sm:text-xs">
-              Hung by the UNSIGNED crew
+              Hung by the Artisan crew
             </p>
           </div>
         </div>

@@ -30,7 +30,7 @@ export function Header() {
           className="flex items-baseline gap-1.5 font-display text-2xl uppercase leading-none tracking-tight"
           onClick={() => setOpen(false)}
         >
-          UNSIGNED
+          Artisan
           <span className="align-super font-mono text-[10px] font-bold text-signal">
             ®
           </span>

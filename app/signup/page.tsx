@@ -5,9 +5,9 @@ import { Stamp } from "@/components/stamp";
 import { SignUpForm } from "@/components/signup-form";
 
 export const metadata: Metadata = {
-  title: "Join UNSIGNED — Pick your side",
+  title: "Join Artisan — Pick your side",
   description:
-    "Join UNSIGNED as a collector or an artist. Buy direct from indie artists, or sell your own work and keep 85%.",
+    "Join Artisan as a collector or an artist. Buy direct from indie artists, or sell your own work and keep 85%.",
 };
 
 export default function SignUpPage() {
@@ -20,7 +20,7 @@ export default function SignUpPage() {
             <Stamp tone="acid" rotate={-3}>
               No gatekeepers
             </Stamp>
-            Join unsigned
+            Join Artisan
           </p>
           <h1 className="mt-5 font-display text-6xl uppercase leading-[0.85] tracking-tight sm:text-7xl">
             Pick your side.

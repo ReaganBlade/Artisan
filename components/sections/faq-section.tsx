@@ -17,7 +17,7 @@ export function FaqSection() {
         </div>
 
         <p className="mt-6 text-center font-mono text-xs uppercase tracking-widest text-ink/60">
-          Still stuck? Email humans@unsigned.example — a person replies.
+          Still stuck? Email humans@artisan.example — a person replies.
         </p>
       </div>
     </section>

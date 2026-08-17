@@ -3,7 +3,7 @@ import { display, mono, sans } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "UNSIGNED — Art by people, not platforms",
+  title: "Artisan — Art by people, not platforms",
   description:
     "A marketplace where indie and unknown artists sell original art and prints directly to collectors. No galleries. No gatekeepers.",
 };
