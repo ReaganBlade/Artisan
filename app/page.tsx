@@ -11,6 +11,7 @@ import { Testimonials } from "@/components/sections/testimonials";
 import { Journal } from "@/components/sections/journal";
 import { Newsletter } from "@/components/sections/newsletter";
 import { FaqSection } from "@/components/sections/faq-section";
+import { PersonalizedFeed } from "@/components/sections/personalized-feed";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Marquee />
         <Hero />
         <JustDropped />
+        <PersonalizedFeed />
         <Artists />
         <Categories />
         <Press />

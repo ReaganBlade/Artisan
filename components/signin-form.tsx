@@ -157,7 +157,7 @@ export function SignInForm() {
         <p className="text-center font-mono text-xs uppercase tracking-wider">
           New here?{" "}
           <a
-            href="/signup"
+            href="/user/sign-up"
             className="font-bold text-electric underline-offset-4 hover:underline hover:decoration-2"
           >
             Join the wall →

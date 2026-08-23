@@ -5,16 +5,35 @@ import { useState } from "react";
 import { Button } from "./button";
 import { cn } from "./cn";
 import { useSession } from "@/lib/auth";
+import { useCart } from "@/lib/cart/provider";
 
 const navLinks = [
-  { label: "Browse the wall", href: "/#just-dropped" },
+  { label: "Browse", href: "/#just-dropped" },
   { label: "Artists", href: "/#artists" },
-  { label: "Journal", href: "/#journal" },
+  { label: "Search", href: "/search" },
   { label: "FAQ", href: "/#faq" },
 ];
 
 function firstName(email: string): string {
   return email.split("@")[0] || email;
+}
+
+function CartLink() {
+  const { itemCount } = useCart();
+  return (
+    <Link
+      href="/cart"
+      className="relative font-mono text-xs font-bold uppercase tracking-widest underline-offset-4 hover:underline hover:decoration-riot hover:decoration-2"
+      aria-label={`Cart (${itemCount} items)`}
+    >
+      Cart
+      {itemCount > 0 && (
+        <span className="absolute -right-3 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-riot text-[9px] font-bold text-ink">
+          {itemCount}
+        </span>
+      )}
+    </Link>
+  );
 }
 
 export function Header() {
@@ -65,16 +84,17 @@ export function Header() {
           ) : (
             <>
               <Link
-                href="/signin"
+                href="/user/sign-in"
                 className="font-mono text-xs font-bold uppercase tracking-widest underline-offset-4 hover:underline hover:decoration-electric hover:decoration-2"
               >
                 Sign in
               </Link>
-              <Button href="/signup" size="sm">
+              <Button href="/user/sign-up" size="sm">
                 Join the wall
               </Button>
             </>
           )}
+          <CartLink />
         </div>
 
         <button
@@ -133,18 +153,24 @@ export function Header() {
               ) : (
                 <>
                   <Button
-                    href="/signin"
+                    href="/user/sign-in"
                     variant="paper"
                     size="sm"
                     className="flex-1"
                   >
                     Sign in
                   </Button>
-                  <Button href="/signup" size="sm" className="flex-1">
+                  <Button href="/user/sign-up" size="sm" className="flex-1">
                     Join the wall
                   </Button>
                 </>
               )}
+              <Link
+                href="/cart"
+                className="flex flex-1 items-center justify-center gap-2 border-2 border-ink bg-paper px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider shadow-hard-sm"
+              >
+                Cart
+              </Link>
             </div>
           </nav>
         </div>

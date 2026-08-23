@@ -368,7 +368,7 @@ export function SignUpForm() {
       <p className="mt-6 text-center font-mono text-xs uppercase tracking-wider">
         Already on the wall?{" "}
         <a
-          href="/signin"
+          href="/user/sign-in"
           className="font-bold text-electric underline-offset-4 hover:underline hover:decoration-2"
         >
           Sign in →
