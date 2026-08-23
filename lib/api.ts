@@ -95,15 +95,21 @@ export async function apiFetch<T>(
   service: ServiceName,
   path: string,
   init: RequestInit = {},
+  accessToken?: string,
 ): Promise<T> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), API_TIMEOUT_MS);
   try {
+    const authHeaders: Record<string, string> = {};
+    if (accessToken) {
+      authHeaders["Authorization"] = `Bearer ${accessToken}`;
+    }
     const response = await fetch(apiUrl(service, path), {
       ...init,
       signal: controller.signal,
       headers: {
         "Content-Type": "application/json",
+        ...authHeaders,
         ...(init.headers ?? {}),
       },
     });

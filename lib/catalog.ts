@@ -3,7 +3,6 @@
  * Service (artisan-backend/services/media_service) and adapts its payloads to
  * the frontend's display types.
  *
- * The Media Service routes are currently dummy endpoints returning mock data.
  * If the backend is unreachable, every function falls back to the local
  * showcase data in `components/data.ts` so the site still renders.
  *
@@ -11,7 +10,7 @@
  * APIs so it stays server-safe.
  */
 
-import { apiFetch } from "./api";
+import { mediaApi } from "./api/media";
 import { artworks as localArtworks, artists as localArtists } from "@/components/data";
 import type { Artist, Artwork } from "@/components/data";
 import type { ArtVariant } from "@/components/artwork";
@@ -105,14 +104,7 @@ export function toArtist(api: ApiProfile): Artist {
 async function fetchArtworkList(
   params: Record<string, string | number> = {},
 ): Promise<ApiArtwork[]> {
-  const query = new URLSearchParams(
-    Object.entries(params).map(([key, value]) => [key, String(value)]),
-  ).toString();
-  const page = await apiFetch<Paginated<ApiArtwork>>(
-    "media",
-    `/artworks${query ? `?${query}` : ""}`,
-    { cache: "no-store" },
-  );
+  const page = await mediaApi.getArtworks(params);
   return page.items;
 }
 
@@ -120,6 +112,8 @@ async function fetchProfileList(params: Record<string, string | number> = {}): P
   const query = new URLSearchParams(
     Object.entries(params).map(([key, value]) => [key, String(value)]),
   ).toString();
+  // Profiles endpoint uses the same media service
+  const { apiFetch } = await import("./api");
   const page = await apiFetch<Paginated<ApiProfile>>(
     "media",
     `/profiles${query ? `?${query}` : ""}`,

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { display, mono, sans } from "./fonts";
+import { CartProvider } from "@/lib/cart/provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
-        {children}
+        <CartProvider>{children}</CartProvider>
       </body>
     </html>
   );

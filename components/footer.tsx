@@ -5,12 +5,12 @@ const collectors = [
   { label: "Browse the wall", href: "/#just-dropped" },
   { label: "Curated walls", href: "/#curated-wall" },
   { label: "Meet the artists", href: "/#artists" },
-  { label: "Track an order", href: "/signin" },
+  { label: "Track an order", href: "/user/sign-in" },
   { label: "FAQ", href: "/#faq" },
 ];
 
 const artists = [
-  { label: "Sell your work", href: "/signup" },
+  { label: "Sell your work", href: "/user/sign-up" },
   { label: "Artist payouts", href: "/#faq" },
   { label: "Submission rules", href: "/#faq" },
   { label: "The journal", href: "/#journal" },
